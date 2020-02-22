@@ -1,0 +1,25 @@
+{
+  "name": "jest_scrape",
+  "version": "1.0.0",
+  "description": "Jest handling for websites",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vishnu-Prabhakaran/Jest_Scrape.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vishnu-Prabhakaran/Jest_Scrape/issues"
+  },
+  "homepage": "https://github.com/Vishnu-Prabhakaran/Jest_Scrape#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "jest": "^25.1.0",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.5"
+  }
+}
