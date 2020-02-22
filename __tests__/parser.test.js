@@ -4,7 +4,7 @@ let html;
 
 // beforeAll runs before Test
 beforeAll(() => {
-  html = fs.readFileSync('../test.html');
+  html = fs.readFileSync('./test.html');
   listings = parser.listings(html);
 });
 
@@ -13,20 +13,19 @@ it('should give the correct listing objects', () => {
 });
 
 it('should give the correct hood from listings', () => {
-  expect(listings[0].hood).toBe('(Burbank)');
+  expect(listings[0].hood).toBe('');
 });
-
+// Date will not be equal so use toStrictEqual instead of toBe
 it('should give the correct date from listings', () => {
-  expect(listings[0].datePosted).toBe(new Date('2020-02-22 01:26'));
-});
-
-it('Should get correct url', () => {
-  expect(listings[0].title).toBe('BOH Staff needed');
+  expect(listings[0].datePosted).toStrictEqual(new Date('2020-02-22 04:16'));
 });
 
 it('Should get correct title', () => {
-  const listings = parser.listings(html);
+  expect(listings[0].title).toBe('Class A CDL Truck Drivers- Dedicated Routes');
+});
+
+it('Should get correct Url', () => {
   expect(listings[0].url).toBe(
-    'https://losangeles.craigslist.org/sfv/fbh/d/burbank-boh-staff-needed/7080130721.html'
+    'https://losangeles.craigslist.org/lgb/trp/d/los-angeles-class-cdl-truck-drivers/7080150705.html'
   );
 });
